@@ -53,7 +53,7 @@ int video(int width, int height, std::string pixel_format, int num_device){
 
     // add BB to pipeline
     Node n = b.add(bb_name[pixel_format])()
-      .set_param(
+      .set_params(
         Param("num_devices", num_device),
         Param("frame_sync", true),
         Param("realtime_display_mode", true)
@@ -95,10 +95,10 @@ int video(int width, int height, std::string pixel_format, int num_device){
 int main(int argc, char *argv[])
 {
   try{
-    int32_t width = 1920;
-    int32_t height = 1080;
-    int32_t num_device = 1;
-    std::string pixelformat = "Mono8";
+    int32_t width = 1280;
+    int32_t height = 960;
+    int32_t num_device = 2;
+    std::string pixelformat = "Mono12";
 
     if (pixelformat == "Mono8"){
       int ret = video<uint8_t>(width, height, pixelformat, num_device);

@@ -43,7 +43,7 @@ if __name__ == "__main__":
 
     # add a node to pipeline
     node = builder.add(bb_name) \
-        .set_param([num_devices, frame_sync, realtime_display_mode, ])
+        .set_params([num_devices, frame_sync, realtime_display_mode, ])
     output_p = node.get_port('output')
     frame_count_p = node.get_port('frame_count')
 

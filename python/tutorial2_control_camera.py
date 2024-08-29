@@ -58,11 +58,11 @@ if __name__ == "__main__":
 
     # add a node to pipeline
     node = builder.add(bb_name)\
-        .set_iport([gain_ps[0], exposure_ps[0]])\
-        .set_param([num_devices, frame_sync, realtime_display_mode, enable_control, gain_key, exposure_key]) if num_device == 1 \
+        .set_iports([gain_ps[0], exposure_ps[0]])\
+        .set_params([num_devices, frame_sync, realtime_display_mode, enable_control, gain_key, exposure_key]) if num_device == 1 \
         else builder.add(bb_name)\
-            .set_iport([gain_ps[0], exposure_ps[0], gain_ps[1], exposure_ps[1]])\
-            .set_param([num_devices, frame_sync, realtime_display_mode, enable_control, gain_key, exposure_key])
+            .set_iports([gain_ps[0], exposure_ps[0], gain_ps[1], exposure_ps[1]])\
+            .set_params([num_devices, frame_sync, realtime_display_mode, enable_control, gain_key, exposure_key])
     output_p = node.get_port('output')
 
     # create halide buffer for output port
